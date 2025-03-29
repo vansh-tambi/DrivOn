@@ -1,23 +1,38 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react'
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
+import axios from 'axios'
+import {UserDataContext} from '../context/UserContext'
+
 const UserSignup = () => {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
-  const [userData, setUserData] = useState({});
-  const submitHandler= (e)=>{
+
+
+  const navigate = useNavigate();
+  const {user, setUser} = React.useContext(UserDataContext);
+
+  const submitHandler = async (e)=>{
     e.preventDefault();
-    setUserData({
+    const newUser = {
       email:email,
       password:password,
       fullname:{
         firstName:firstName,
         lastName:lastName
-      },
-    })
+      }
+    }
+
+    const response = await axios.post(`${import.meta.env.VITE_BASE_URL}/users/register`, newUser);
+    if(response.status === 201){
+      const data = response.data;
+      setUser(data.user);
+      localStorage.setItem('token', data.token);
+      navigate('/home');
+    }
 
     setEmail('');
     setPassword('');
@@ -48,7 +63,7 @@ const UserSignup = () => {
         <input className='bg-[#eeeeee] mb-6 rounded-md px-2 py-2 border w-full text-lg placeholder:text-base' 
            required type='password' value={password} onChange={(e)=>{setPassword(e.target.value)}} placeholder='Password'/>
     
-        <button onClick={(e)=>{submitHandler(e)}} className='bg-[#111] mb-3 text-white rounded-md px-2 py-2 w-full text-lg'>Signup</button>
+        <button onClick={(e)=>{submitHandler(e)}} className='bg-[#111] mb-3 text-white rounded-md px-2 py-2 w-full text-lg'>Create Account</button>
       </form>
         <p className='text-center mb-6 text-white'>Already have a account? <Link to="/login" className='text-[#3A86FF]'>Login in here</Link></p>
       </div>
