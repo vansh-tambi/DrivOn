@@ -60,15 +60,15 @@ const CaptainSignup = () => {
 
   }
   return (
-    <div className='py-5 bg-[#262f39] px-5 h-screen flex flex-col justify-between'>
+    <div className='py-5 bg-white px-5 h-screen flex flex-col justify-between'>
       <div>
-        <img className='w-20 mb-4' src="/DrivOnCaptain.png" alt="" />
+        <img className='w-20 mb-4' src="/DrivOnCaptainOrange.png" alt="" />
 
         <form onSubmit={(e) => {
           submitHandler(e)
         }}>
 
-          <h3 className='text-lg w-full text-white  font-medium mb-2'>What's our Captain's name</h3>
+          <h3 className='text-lg w-full text-black  font-medium mb-2'>What's our Captain's name</h3>
           <div className='flex gap-4 mb-5'>
             <input
               required
@@ -92,22 +92,22 @@ const CaptainSignup = () => {
             />
           </div>
 
-          <h3 className='text-lg text-white font-medium mb-2'>What's our Captain's email</h3>
+          <h3 className='text-lg text-black font-medium mb-2'>What's our Captain's email</h3>
           <input
             required
             value={email}
             onChange={(e) => {
               setEmail(e.target.value)
             }}
-            className='bg-[#eeeeee] mb-7 rounded-lg px-4 py-2 border w-full text-lg placeholder:text-base'
+            className='bg-[#eeeeee] mb-4 rounded-lg px-4 py-2 border w-full text-lg placeholder:text-base'
             type="email"
             placeholder='email@example.com'
           />
 
-          <h3 className='text-lg font-medium mb-2 text-white'>Enter Password</h3>
+          <h3 className='text-lg font-medium mb-2 text-black'>Enter Password</h3>
 
           <input
-            className='bg-[#eeeeee] mb-5 rounded-lg px-4 py-2 border w-full text-lg placeholder:text-base'
+            className='bg-[#eeeeee] mb-4 rounded-lg px-4 py-2 border w-full text-lg placeholder:text-base'
             value={password}
             onChange={(e) => {
               setPassword(e.target.value)
@@ -116,7 +116,7 @@ const CaptainSignup = () => {
             placeholder='password'
           />
 
-          <h3 className='text-lg text-white font-medium mb-2'>Vehicle Information</h3>
+          <h3 className='text-lg text-black font-medium mb-2'>Vehicle Information</h3>
           <div className='flex gap-4 mb-5'>
             <input
               required
@@ -166,11 +166,11 @@ const CaptainSignup = () => {
           </div>
 
           <button
-            className='bg-[#111] text-white font-semibold mb-1 rounded-lg px-4 py-2 w-full text-lg placeholder:text-base'
+            className='bg-black mb-3 mt-2 text-white rounded-md px-2 py-2 w-full text-lg'
           >Create Captain Account</button>
 
         </form>
-        <p className='text-center text-white text-sm'>Already have a account? <Link to='/captain-login' className='text-blue-600'>Login here</Link></p>
+        <p className='text-center text-gray-700 text-sm'>Already have a account? <Link to='/captain-login' className='text-blue-600'>Login here</Link></p>
       </div>
       <div>
         <p className='text-[10px] mt-4 leading-tight'>This site is protected by reCAPTCHA and the <span className='underline'>Google Privacy
