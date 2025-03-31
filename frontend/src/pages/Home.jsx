@@ -5,6 +5,8 @@ import 'remixicon/fonts/remixicon.css'
 import LocationSearchPanel from '../components/LocationSearchPanel';
 import VehiclePanel from '../components/VehiclePanel';
 import ConfirmedRide from '../components/ConfirmedRide';
+import LookingForDrivers from '../components/LookingForDrivers';
+import WaitingForDrivers from '../components/WaitingForDrivers';
 
 
 const Home = () => {
@@ -16,8 +18,12 @@ const Home = () => {
   const vehiclePanelRef = useRef(null);
   const confirmRidePanelRef = useRef(null);
   const panelCloseRef = useRef(null);
+  const lookingForDriverRef = useRef(null);
+  const waitingForDriverRef = useRef(null);
   const [vehiclePanelOpen, setVehiclePanelOpen] = useState(false);
   const [confirmRidePanel, setConfirmRidePanel] = useState(false);
+  const [vehicleFound, setVehicleFound] = useState(false);
+  const [waitingForDriver, setWaitingForDriver] = useState(false);
 
   const submitHandler = (e)=>{
     e.preventDefault();
@@ -77,6 +83,40 @@ const Home = () => {
   },[confirmRidePanel])
 
 
+
+  useGSAP(function(){
+
+    if(vehicleFound){
+      gsap.to(lookingForDriverRef.current,{
+        transform:'translateY(0)'
+      })
+    }
+    else{
+      gsap.to(lookingForDriverRef.current,{
+        transform:'translateY(100%)'
+      })
+    }
+    
+  },[vehicleFound])
+
+
+
+  useGSAP(function(){
+
+    if(waitingForDriver){
+      gsap.to(waitingForDriverRef.current,{
+        transform:'translateY(0)'
+      })
+    }
+    else{
+      gsap.to(waitingForDriverRef.current,{
+        transform:'translateY(100%)'
+      })
+    }
+    
+  },[waitingForDriver])
+
+
   return (
     <div className='h-screen relative overflow-hidden'>
       
@@ -114,7 +154,16 @@ const Home = () => {
       </div>
 
       <div ref={confirmRidePanelRef}  className='mb-5 translate-y-full fixed w-full bg-white bottom-0 px-3 pt-12 py-3 z-10'>
-          <ConfirmedRide setConfirmRidePanel={setConfirmRidePanel} />
+          <ConfirmedRide setConfirmRidePanel={setConfirmRidePanel} setVehicleFound={setVehicleFound} />
+      </div>
+
+      <div ref={lookingForDriverRef}  className='mb-5 translate-y-full fixed w-full bg-white bottom-0 px-3 pt-12 py-3 z-10'>
+          <LookingForDrivers setVehicleFound={setVehicleFound} />
+      </div>
+
+
+      <div ref={waitingForDriverRef} className='mb-5 translate-y-full fixed w-full bg-white bottom-0 px-3 pt-12 py-3 z-10'>
+          <WaitingForDrivers setWaitingForDriver={setWaitingForDriver} />
       </div>
 
     </div>
