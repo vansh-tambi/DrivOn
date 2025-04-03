@@ -2,7 +2,7 @@ import React from 'react'
 
 const ConfirmedRide = (props) => {
   return (
-    <div className=''>
+    <div>
       <div className='flex justify-between'>
           <h3 className=' text-2xl font-bold mb-4'>Confirm Your Ride</h3>
           <i onClick={() => {props.setConfirmRidePanel(false)}}  className="text-2xl font-bold ri-arrow-down-wide-fill"></i>
@@ -23,7 +23,7 @@ const ConfirmedRide = (props) => {
             <div className='flex items-center gap-5 border-b-2 border-b-gray-300 p-2'>
               <i className='ri-map-pin-add-fill text-2xl'></i>
                 <div>
-                  <h3 className='text-lg font-medium'>562/11-A</h3>
+                  <h3 className='text-lg font-medium'>D-66</h3>
                   <p className='text-sm text-gray-600'>Nehru Nagar, Bhopal</p>
                 </div>
             </div>

@@ -13,7 +13,7 @@ const LocationSearchPanel = (props) => {
         
         <div onClick={()=>{props.setVehiclePanel(true), props.setPanelOpen(false)}} className="w-full flex flex-col gap-y-3">
           {locations.map((item, index) => (
-            <div key={index} className="flex border border-gray-300 p-2 rounded-2xl items-start my-2 gap-4">
+            <div key={index} className="flex border border-gray-300 p-2 rounded-2xl items-center my-2 gap-4">
               <h2 className="bg-[#eee] w-12 h-12 flex items-center justify-center rounded-full flex-shrink-0">
                 <i className={`${item.icon} text-xl`}></i>
               </h2>

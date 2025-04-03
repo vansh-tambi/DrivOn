@@ -158,7 +158,7 @@ const CaptainSignup = () => {
                 setVehicleType(e.target.value)
               }}
             >
-              <option value="" disabled>Select Vehicle Type</option>
+              <option value="" disabled>Select Vehicle</option>
               <option value="car">Car</option>
               <option value="auto">Auto</option>
               <option value="motorcycle">Moto</option>
