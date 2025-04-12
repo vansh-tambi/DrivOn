@@ -1,12 +1,14 @@
 import React from 'react'
+import { CaptainDataContext } from '../context/CaptainContext'
 
 const CaptainDetails = () => {
+  const { captain } = React.useContext(CaptainDataContext);
   return (
     <div className='h-2/5 p-6'>
             <div className='flex items-center justify-between'>
               <div className='flex items-center justify-start gap-4'>
                 <img src='/DrivOnDriver.jpeg' className='h-20 object-cover w-20 rounded-full' />
-                <h4 className='text-lg font-medium'>Harsh Patel</h4>
+                <h4 className='text-lg font-semibold capitalize'>{captain.fullname.firstName} {captain.fullname.lastName}</h4>
               </div>
 
               <div>

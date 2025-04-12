@@ -429,7 +429,7 @@ The request body should be in JSON format and include the following fields:
 ```
 
 
-## `/rides/get-fare` Endpoint
+## `/rides/calculate-fare` Endpoint
 
 ### Description
 

@@ -1,25 +1,26 @@
 import React from 'react'
 
-const LocationSearchPanel = (props) => {
+const LocationSearchPanel = ({suggestions,  activeField, setPickup, setDestination}) => {
 
-    const locations = [
-        { icon: "ri-map-pin-fill", text: "69GX+VV9, Boulevard St TT Nagar, Bhopal" },
-        { icon: "ri-plane-line", text: "698G+J5C, Van Vihar Rd, Prempura, Bhopal" },
-        { icon: "ri-hospital-fill", text: "Kohefiza Road, Bhopal" },
-        { icon: "ri-gas-station-fill", text: "49/17, Sunhari Bagh, TT Nagar, Bhopal" },
-      ];
-      
+  const handleSuggestionClick = (suggestion) => {
+    if(activeField === 'pickup'){
+      setPickup(suggestion.description)
+    }else if(activeField === 'destination'){
+      setDestination(suggestion.description)
+    }
+  }
       return (
         
-        <div onClick={()=>{props.setVehiclePanel(true), props.setPanelOpen(false)}} className="w-full flex flex-col gap-y-3">
-          {locations.map((item, index) => (
-            <div key={index} className="flex border border-gray-300 p-2 rounded-2xl items-center my-2 gap-4">
-              <h2 className="bg-[#eee] w-12 h-12 flex items-center justify-center rounded-full flex-shrink-0">
-                <i className={`${item.icon} text-xl`}></i>
-              </h2>
-              <h4 className="font-semibold flex-1">{item.text}</h4>
-            </div>
-          ))}
+        <div>
+            {/* Display fetched suggestions */}
+            {
+                suggestions.map((elem, idx) => (
+                    <div key={idx} onClick={() => handleSuggestionClick(elem)} className='flex gap-4 border-2 p-3 border-gray-50 active:border-black rounded-xl items-center my-2 justify-start'>
+                        <h2 className='bg-[#eee] h-8 flex items-center justify-center w-12 rounded-full'><i className="ri-map-pin-fill"></i></h2>
+                        <h4 className='font-medium'>{elem.description}</h4>
+                    </div>
+                ))
+            }
         </div>
       );
       

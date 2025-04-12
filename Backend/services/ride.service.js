@@ -10,59 +10,55 @@ function getOTP(num){
     return otp;
 }
 
-async function calculateFare( origin, destination, vehicleType){
-    if(!origin || !destination || !vehicleType){
-        throw new Error('Origin and destination are required');
+async function calculateFare( origin, destination){
+    if (!origin || !destination) {
+        throw new Error('Pickup and destination are required');
     }
+
 
     const distanceTime = await mapService.getDistanceTime(origin, destination);
-    const distanceInKm = distanceTime.distance.value / 1000; // Convert meters to kilometers
-    const durationInMinutes = distanceTime.duration.value / 60; // Convert seconds to minutes
-
-    // Base fare and per km rates for different vehicle types
-    const fareRates = {
-        car: {
-            baseFare: 20,
-            perKm: 7,
-            perMinute: 0.8
-        },
-        auto: {
-            baseFare: 15,
-            perKm: 6,
-            perMinute: 0.5
-        },
-        moto: {
-            baseFare: 10,
-            perKm: 4,
-            perMinute: 0.3
-        }
+    const baseFare = {
+        auto: 18,
+        car: 30,
+        moto: 12
     };
 
-    if (!fareRates[vehicleType]) {
-        throw new Error('Invalid vehicle type');
-    }
+    const perKmRate = {
+        auto: 5,
+        car: 8,
+        moto: 4
+    };
 
-    const rates = fareRates[vehicleType];
-    const fare = rates.baseFare + 
-                (distanceInKm * rates.perKm) + 
-                (durationInMinutes * rates.perMinute);
+    const perMinuteRate = {
+        auto: 2,
+        car: 3,
+        moto: 1
+    };
 
-    // Round to 2 decimal places
-    return Math.round(fare * 100) / 100;
+    const fare = {
+        auto: Math.round(baseFare.auto + ((distanceTime.distance.value / 1000) * perKmRate.auto) + ((distanceTime.duration.value / 60) * perMinuteRate.auto)),
+        car: Math.round(baseFare.car + ((distanceTime.distance.value / 1000) * perKmRate.car) + ((distanceTime.duration.value / 60) * perMinuteRate.car)),
+        moto: Math.round(baseFare.moto + ((distanceTime.distance.value / 1000) * perKmRate.moto) + ((distanceTime.duration.value / 60) * perMinuteRate.moto))
+    };
+
+    return fare;
+    
 }
 
+module.exports.calculateFare = calculateFare;
 
 module.exports.createRide = async({user, pickup, destination, vehicleType})=>{
     if( !pickup || !destination || !vehicleType){
         throw new Error('All fields are required');
     }
-    const fare = await calculateFare(pickup, destination, vehicleType);
+    const fare = await calculateFare(pickup, destination);
+    const farevehicle = fare[vehicleType]
     
     const ride = rideModel.create({
         user,
         pickup,
         destination,
-        fare,
+        fare:farevehicle,
         otp:getOTP(6)
     })
 

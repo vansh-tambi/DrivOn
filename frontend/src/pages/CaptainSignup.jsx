@@ -23,8 +23,30 @@ const CaptainSignup = () => {
   const { captain, setCaptain } = React.useContext(CaptainDataContext)
 
 
+  const verifyEmail = async (email) => {
+    const apiKey = 'your_zerobounce_api_key'; // replace with your real key
+    const url = `https://api.zerobounce.net/v2/validate?api_key=${apiKey}&email=${email}`;
+  
+    try {
+      const res = await axios.get(url);
+      const data = res.data;
+      return data.status === 'valid'; // Only allow valid emails
+    } catch (err) {
+      console.error("Email verification failed:", err);
+      return false;
+    }
+  };
+  
+
+
   const submitHandler = async (e) => {
     e.preventDefault()
+
+    const isValidEmail = await verifyEmail(email);
+    if (!isValidEmail) {
+      alert("❌ Email address doesn't exist or is not valid. Please use a real one.");
+      return;
+    }
     const captainData = {
       fullname: {
         firstName: firstName,
