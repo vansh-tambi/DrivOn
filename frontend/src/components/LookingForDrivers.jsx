@@ -2,15 +2,15 @@ import React from 'react'
 
 const LookingForDrivers = (props) => {
   return (
-    <div>
+    <div className=''>
       <div className='flex justify-between'>
           <h3 className=' text-2xl font-bold mb-4'>Looking for Driver</h3>
           <i onClick={() => {props.setVehicleFound(false)}}  className="text-2xl font-bold ri-arrow-down-wide-fill"></i>
         </div>
 
-        <div className='flex gap-2 flex-col justify-between items-center'>
+        <div className='flex gap-5 flex-col justify-between items-center'>
           <img 
-            className='h-20' 
+            className='h-30' 
             src={
               props.vehicleType === 'car' ? 'LookingForDriverCar.png' :
               props.vehicleType === 'auto' ? 'LookingForDriverAuto.png' :

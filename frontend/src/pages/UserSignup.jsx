@@ -6,18 +6,20 @@ import {UserDataContext} from '../context/UserContext'
 
 
 const verifyEmail = async (email) => {
-  const apiKey = 'eda82a106d044c8b88e883cedbdcebad'; // replace with your real key
-  const url = `https://api.zerobounce.net/v2/validate?api_key=${apiKey}&email=${email}`;
+  const apiKey = '7c1c70e2185c53db58ba3cf98791d834e7553d1e'; // replace with your real key
+  const url = `https://api.hunter.io/v2/email-verifier?email=${email}&api_key=${apiKey}`;
 
   try {
     const res = await axios.get(url);
-    const data = res.data;
-    return data.status === 'valid'; // Only allow valid emails
+    const result = res.data?.data;
+
+    return result?.status === 'valid'; // Only allow valid emails
   } catch (err) {
     console.error("Email verification failed:", err);
     return false;
   }
 };
+
 
 const UserSignup = () => {
 
