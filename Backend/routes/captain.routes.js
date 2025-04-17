@@ -11,7 +11,7 @@ router.post('/register', [
     body('vehicle.color').isLength({min:3}).withMessage('color must be at least 3 characters'),
     body('vehicle.plate').isLength({min:3}).withMessage('plate no. must be at least 3 characters'),
     body('vehicle.capacity').isInt({min:1}).withMessage('capacity must be at least 1'),
-    body('vehicle.vehicleType').isIn(['car','motorcycle', 'auto']).withMessage('vehicleType must be from one of the options car, auto or motorcycle')
+    body('vehicle.vehicleType').isIn(['car','moto', 'auto']).withMessage('vehicleType must be from one of the options car, auto or moto')
 ], captainController.registerCaptain);
 
 
