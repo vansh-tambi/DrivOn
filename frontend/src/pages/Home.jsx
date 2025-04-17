@@ -200,7 +200,7 @@ socket.on('ride-started', ride => {
   }
 
   async function createRide() {
-    const response = await axios.post(`${import.meta.env.VITE_BASE_URL}/rides/create`, {
+    await axios.post(`${import.meta.env.VITE_BASE_URL}/rides/create`, {
         pickup,
         destination,
         vehicleType
