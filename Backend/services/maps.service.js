@@ -81,14 +81,16 @@ module.exports.getSuggestions = async(input)=>{
     }
 }
 
-module.exports.getCaptainsInRange = async (ltd, lng, radius) => {
+module.exports.getCaptainsInRange = async (ltd, lng, radius, vehicleType) => {
     const captains = await captainModel.find({
         location: {
             $geoWithin: {
-                $centerSphere: [ [ltd, lng], radius / 6371]
+                $centerSphere: [ [ltd, lng], radius / 6371 ] // Radius in radians
             }
-        }
+        },
+        'vehicle.vehicleType': vehicleType // Match the nested field
     });
-    
+
     return captains;
 };
+

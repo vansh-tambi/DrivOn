@@ -12,6 +12,7 @@ import { SocketContext } from '../context/SocketContext';
 import { useContext, useEffect } from 'react';
 import {UserDataContext} from '../context/UserContext';
 import { useNavigate } from 'react-router-dom';
+import LiveTracking from '../components/LiveTracking';
 
 const Home = () => {
 
@@ -216,7 +217,7 @@ socket.on('ride-started', ride => {
       
       <img src='/DrivOnOrange.png' onClick={()=>{setVehiclePanelOpen(false), setPanelOpen(true)}} className='w-30 absolute left-3 top-3'/>
       <div className='w-screen h-screen'>
-        <img src='/DrivOnMap.gif' className='h-full w-full object-cover'/>
+        <LiveTracking vehicleMode={false}/>
       </div>
 
       <div className='h-screen justify-end flex flex-col absolute top-0 w-full '>

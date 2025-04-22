@@ -3,12 +3,14 @@ import { Link, useLocation } from 'react-router-dom'
 import { useContext } from 'react';
 import { SocketContext } from '../context/SocketContext';
 import { useNavigate } from 'react-router-dom';
+import LiveTracking from '../components/LiveTracking';
 
 const Riding = () => {
 
 
     const location = useLocation();
     const {ride} = location.state;
+    console.log(ride.captain.vehicle.vehicleType);
     const {socket} = useContext(SocketContext);
     const navigate = useNavigate();
 
@@ -27,7 +29,7 @@ const Riding = () => {
         </Link>
 
         <div className='h-3/7'>
-            <img src='/DrivOnMap.gif' className='h-full w-full object-cover' />
+            <LiveTracking ride={ride}/>
         </div>
 
         <div className='h-4/7 mt-4 p-4'>
@@ -35,7 +37,11 @@ const Riding = () => {
             <div className='flex justify-between mb-3'>
             
                 
-            <img className='h-20' src='DrivOnCar.png' />
+            <img className='h-20' src={
+              ride.captain.vehicle.vehicleType === 'car' ? 'DrivOnCar.png' :
+              ride.captain.vehicle.vehicleType === 'moto' ? 'DrivOnBike.webp' :
+              'DrivOnAuto.webp'
+            } />
             
 
             <div className='flex flex-col'>

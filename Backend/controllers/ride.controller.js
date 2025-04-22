@@ -11,6 +11,7 @@ module.exports.createRide = async (req, res) =>{
     }
 
     const { pickup, destination, vehicleType} = req.body;
+    
 
     try{
         const ride = await rideService.createRide({user:req.user._id,pickup, destination, vehicleType});
@@ -19,7 +20,7 @@ module.exports.createRide = async (req, res) =>{
         const pickupCoordinates = await mapService.getAddressCoordinates(pickup);
         
 
-        const captainsInRadius = await mapService.getCaptainsInRange(pickupCoordinates.ltd, pickupCoordinates.lng, 5);
+        const captainsInRadius = await mapService.getCaptainsInRange(pickupCoordinates.ltd, pickupCoordinates.lng, 5, vehicleType);
         
         if (!captainsInRadius) {
             console.log('No captains found in range');

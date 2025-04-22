@@ -11,6 +11,7 @@ import { useEffect, useContext } from 'react'
 import {CaptainDataContext} from '../context/CaptainContext'
 import {SocketContext} from '../context/SocketContext'
 import axios from 'axios'
+import LiveTracking from '../components/LiveTracking'
 
 
 
@@ -114,7 +115,7 @@ async function confirmRide(){
   return (
     <div className='h-screen'>
         <div className='h-3/5 '>
-            <img src='/DrivOnMap.gif' className='h-full w-full object-cover relative' />
+            <LiveTracking vehicleMode={false}/>
             <Link to='/captain-login' className='h-10 w-10 bg-white flex items-center justify-center rounded-full absolute right-5 top-5'><i className="ri-logout-box-r-line text-2xl"></i></Link>
         </div>
 
