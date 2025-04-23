@@ -12,7 +12,12 @@ const rideRoutes = require('./routes/ride.routes');
 dotenv.config();
 connectDB();
 
-app.use(cors());
+app.use(cors({
+    origin: "https://drivon.onrender.com", // frontend render URL
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true
+  }));
+  
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.use(cookieParser());

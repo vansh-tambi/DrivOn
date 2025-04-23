@@ -7,9 +7,11 @@ let io;
 function initializeSocket(server) {
     io = socketIo(server, {
         cors: {
-            origin: '*',
-            methods: [ 'GET', 'POST' ]
-        }
+            origin: "https://drivon.onrender.com", // ✅ YOUR FRONTEND RENDER URL
+            methods: ["GET", "POST"],
+            credentials: true
+          }
+          
     });
 
     io.on('connection', (socket) => {
