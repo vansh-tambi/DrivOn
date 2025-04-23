@@ -32,11 +32,11 @@ const UserLogin = () => {
   }
 
   return (
-    <div className='p-7 flex flex-col justify-between items-center bg-white h-screen'>
+    <div className='p-7 flex flex-col justify-between items-center relative bg-white h-screen'>
 
+      <img src="/DrivOnOrange.png" className='w-30 md:w-40 absolute mb-13 left-5 top-5'></img>
       <div>
-      <img src="/DrivOnOrange.png" className='w-30 mb-13'></img>
-      <form onSubmit={(e)=>{submitHandler(e)}}>
+      <form className='mt-[5rem]' onSubmit={(e)=>{submitHandler(e)}}>
         <h3 className='text-lg mb-2 text-black'>What's Your email</h3>
         <input className='bg-[#eeeeee] mb-7 rounded-md px-2 py-2 border w-full text-lg placeholder:text-lg'
           value={email} onChange={(e)=>{setEmail(e.target.value)}}  required type='email' placeholder='email@example.com'/>
@@ -51,8 +51,8 @@ const UserLogin = () => {
         <p className='text-center mb-7 text-gray-700'>New here? <Link to="/signup" className='text-[#3A86FF]'>Create new Account</Link></p>
       </div>
 
-      <div className='w-full'>
-        <Link to="/captain-login" className='flex justify-center bg-[#FF6A00] mb-7 font-bold text-white rounded-md px-2 py-2 w-full text-lg'>Sign in as Captain</Link>
+      <div className='w-full flex items-center justify-center'>
+        <Link to="/captain-login" className='flex justify-center bg-[#FF6A00] mb-7 font-bold text-white rounded-md px-2 py-2 md:w-1/5 w-full text-lg'>Sign in as Captain</Link>
       </div>
 
     </div>

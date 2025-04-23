@@ -31,11 +31,11 @@ const CaptainLogin = ()  => {
     }
 
   return (
-    <div className='p-7 flex flex-col justify-between items-center bg-white h-screen'>
+    <div className='p-7 flex flex-col relative justify-between items-center bg-white h-screen'>
 
       <div>
-      <img src="/DrivOnCaptainOrange.png" className='w-30 mb-13'></img>
-      <form onSubmit={(e)=>{submitHandler(e)}}>
+      <img src="/DrivOnCaptainOrange.png" className='w-30 md:w-40 mb-13 absolute left-5 top-5'></img>
+      <form className='mt-[5rem]' onSubmit={(e)=>{submitHandler(e)}}>
         <h3 className='text-lg mb-2 text-black'>What's Your email</h3>
         <input className='bg-[#eeeeee] mb-7 rounded-md px-2 py-2 border w-full text-lg placeholder:text-lg'
           value={email} onChange={(e)=>{setEmail(e.target.value)}}  required type='email' placeholder='email@example.com'/>
@@ -50,7 +50,7 @@ const CaptainLogin = ()  => {
         <p className='text-center mb-7 text-gray-700'>Join a fleet? <Link to="/captain-signup" className='text-[#3A86FF]'>Register as Captain</Link></p>
       </div>
 
-      <div className='w-full'>
+      <div className='w-full md:w-1/5'>
         <Link to="/login" className='flex justify-center bg-green-500 mb-7 font-bold text-white rounded-md px-2 py-2 w-full text-lg'>Sign in as User</Link>
       </div>
 
