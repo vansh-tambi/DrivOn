@@ -227,23 +227,50 @@ socket.on('ride-started', ride => {
           </h5>
 
           <h4 className='text-2xl font-semibold mt-2 mb-3'>Find a trip</h4>
-          <form onSubmit={(e)=>{
-            submitHandler(e)
-          }}>
-            <div className='line absolute h-15 w-1 top-[45%] left-15 bg-gray-700 rounded-full'></div>
-            <div className='absolute left-14 top-[42%] h-3 w-3 bg-gray-700 rounded-full'></div>
-            <div className='absolute left-14 bottom-[23%] h-3 w-3 bg-gray-700 rounded-full'></div>
-            <input
-              style={{ paddingLeft: '4rem' }}
-              onClick={()=>{setPanelOpen(true)
-              setActiveField('pickup')}} type='text' value={pickup}
-              onChange={handlePickupChange}
-             className='bg-[#eee] text-center rounded-lg px-8 py-2  w-full mb-4 placeholder:text-center' placeholder='Add Pickup Location'/>
-            <input onClick={()=>{setPanelOpen(true)
-              setActiveField('destination')}}
-              style={{ paddingLeft: '4rem' }}
-             type='text' value={destination} onChange={handleDestinationChange} className='bg-[#eee] text-center rounded-lg px-8 py-2 w-full placeholder:text-center' placeholder='Enter Your Destination'/>
-          </form>
+          <form onSubmit={submitHandler}>
+  <div className="relative flex flex-col gap-4">
+    {/* Line between dots */}
+    <div className="absolute left-6 top-6 bottom-6 z-20 flex items-center">
+      <div className="w-1 h-10 bg-gray-700 h-full rounded-full"></div>
+    </div>
+
+    {/* Dot 1 (pickup) */}
+    <div className="absolute w-3 h-3 bg-gray-700 rounded-full left-[21px] top-[16px] z-10"></div>
+
+    {/* Dot 2 (destination) */}
+    <div className="absolute w-3 h-3 bg-gray-700 rounded-full left-[21px] bottom-[16px] z-10"></div>
+
+    {/* Inputs */}
+    <input
+      style={{ paddingLeft: '4rem' }}
+      onClick={() => {
+        setPanelOpen(true);
+        setActiveField('pickup');
+      }}
+      type="text"
+      value={pickup}
+      onChange={handlePickupChange}
+      className="bg-[#eee] text-center rounded-lg px-8 py-2 w-full placeholder:text-center relative z-0"
+      placeholder="Add Pickup Location"
+    />
+
+    <input
+      style={{ paddingLeft: '4rem' }}
+      onClick={() => {
+        setPanelOpen(true);
+        setActiveField('destination');
+      }}
+      type="text"
+      value={destination}
+      onChange={handleDestinationChange}
+      className="bg-[#eee] text-center rounded-lg px-8 py-2 w-full placeholder:text-center relative z-0"
+      placeholder="Enter Your Destination"
+    />
+  </div>
+</form>
+
+
+
 
           <button onClick={findTrip} className='bg-black w-full mt-9 mb-2 text-white px-4 py-2 rounded-lg'>Find Trip</button>
         </div>
