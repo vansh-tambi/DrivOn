@@ -34,7 +34,7 @@ const FinishRide = (props) => {
           <div className='flex items-center bg-yellow-300 p-2 rounded-lg justify-between mb-2'>
             <div className='flex items-center gap-2'>
                 <img src='/DrivOnDriver.jpeg' className='w-15 object-cover h-15 rounded-full' />
-                <h2 className='text-xl font-medium'>{props.ride?.user.fullname.firstname + " " + props.ride?.user.fullname.lastname}</h2>
+                <h2 className='text-xl font-medium'>{props.ride?.user.fullname.firstName + " " + props.ride?.user.fullname.lastName}</h2>
             </div>
             <div className='text-lg font-semibold'>2.2Km</div>
           </div>
