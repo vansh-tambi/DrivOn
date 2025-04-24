@@ -6,11 +6,12 @@ let io;
 
 function initializeSocket(server) {
     io = socketIo(server, {
-        cors: {
-            origin: '*',
-            methods: [ 'GET', 'POST' ]
-        }
-    });
+  cors: {
+    origin: 'https://drivon.onrender.com',
+    methods: ['GET', 'POST'],
+    credentials: true
+  }
+});
 
     io.on('connection', (socket) => {
         console.log(`Client connected: ${socket.id}`);
