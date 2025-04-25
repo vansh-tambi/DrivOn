@@ -230,8 +230,8 @@ socket.on('ride-started', ride => {
           <form onSubmit={submitHandler}>
   <div className="relative flex flex-col gap-4">
     {/* Line between dots */}
-    <div className="absolute left-6 top-6 bottom-6 z-20 flex items-center">
-      <div className="w-1 h-10 bg-gray-700 h-full rounded-full"></div>
+    <div className="absolute left-6 top-6 bottom-6 z-10 flex items-center">
+      <div className="w-1 h-full bg-gray-700 rounded-full"></div>
     </div>
 
     {/* Dot 1 (pickup) */}
