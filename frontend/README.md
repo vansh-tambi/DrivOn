@@ -1,12 +1,54 @@
-# React + Vite
+# 🚗 DrivOn – Frontend (React + Vite)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**DrivOn** is a real-time ride-booking frontend application designed to offer a seamless Uber-like experience. Built with **React**, **TailwindCSS**, **Vite**, and **Socket.io**, DrivOn connects with the backend to enable users to easily book rides, track vehicles, and interact with a live system.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🌐 Tech Stack
 
-## Expanding the ESLint configuration
+- ⚛️ **React** – For building dynamic, responsive UI components.
+- ⚡ **Vite** – A fast build tool and development server for modern web applications.
+- 🎨 **TailwindCSS** – Utility-first CSS framework for fast and efficient styling.
+- 🔌 **Socket.io-client** – Real-time bi-directional communication with the backend.
+- 🌍 **Google Maps API** – To integrate live location tracking and maps.
+- 📦 **Axios** – Promise-based HTTP client for making API requests.
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 📁 Project Structure
+
+/frontend ├── public/ → Static assets (vehicle icons, logos, etc.) ├── src/ │ ├── components/ → UI components (Tracking, Vehicle Panel, etc.) │ ├── context/ → Context API for user and socket state │ ├── pages/ → Page-level components (Home, Riding, etc.) │ ├── App.jsx → Root component │ └── main.jsx → Vite entry point ├── .env → Environment variables ├── tailwind.config.js → TailwindCSS customizations ├── vite.config.js → Vite config └── package.json → Dependencies and scripts
+
+
+---
+
+## 🛠️ Setup Instructions
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/your-username/drivon.git
+cd drivon/frontend
+```
+### 2. Install Dependencies
+```
+npm install
+```
+### 3. Configure Environment Variables
+Create a .env file in the /frontend directory with the following:
+```
+VITE_BASE_URL=https://your-backend-api.onrender.com
+VITE_GOOGLE_MAPS_API=your_google_maps_api_key
+```
+✅ Ensure the backend is deployed and running properly.
+### 4. Run Locally
+```
+npm run dev
+```
+This will start the frontend on http://localhost:5173.
+
+# 🌍 Deployment Instructions (Render / Vercel / Netlify)
+🔧 Render Deployment
+Build Command
+
+
