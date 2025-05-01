@@ -12,7 +12,7 @@ const VehiclePanel = (props) => {
         onClick={()=>{props.setConfirmRidePanel(true)
           props.setVehicleType('car')
         }}
-        className='flex active:bg-gray-200 mb-4 w-full border-2 border-black rounded-2xl items-center justify-between p-3'>
+        className='flex active:bg-gray-200 mb-4 w-full cursor-pointer border-2 border-black rounded-2xl items-center justify-between p-3'>
             <img className='h-12 ' src='/DrivOnCar.png'/>
             <div className=' w-1/2'>
               <h4 className='text-lg font-bold'><span className='text-[#FF6A00]'>D</span>riv<span className='text-[#FF6A00]'>O</span>n-GO<span className='ml-2 font-semibold'><i className="ri-user-fill font-light"></i>- 4</span></h4>
