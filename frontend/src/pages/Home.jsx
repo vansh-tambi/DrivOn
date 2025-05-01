@@ -293,7 +293,7 @@ socket.on('ride-started', ride => {
           <VehiclePanel fare={fare} setVehicleType={setVehicleType} setConfirmRidePanel={setConfirmRidePanel} setVehiclePanelOpen={setVehiclePanelOpen}/>
       </div>
 
-      <div ref={confirmRidePanelRef} className="fixed bottom-0 w-full bg-white px-3 pt-6 pb-3 z-10 translate-y-full">
+      <div ref={confirmRidePanelRef} className="fixed md:px-40 bottom-0 w-full flex flex-col items-center justify-center bg-white px-3 pt-6 pb-3 z-10 translate-y-full">
           <ConfirmedRide
           pickup={pickup}
           destination={destination}
