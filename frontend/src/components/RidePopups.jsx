@@ -5,7 +5,7 @@ const RidePopups = (props) => {
     <div>
     <div className='flex justify-between'>
         <h3 className=' text-2xl font-bold mb-4'>New Ride Available</h3>
-        <i onClick={()=>props.setRidePopupPanel(false)} className="text-2xl font-bold ri-arrow-down-wide-fill"></i>
+        <i onClick={()=>props.setRidePopupPanel(false)} className="text-2xl font-bold cursor-pointer ri-arrow-down-wide-fill"></i>
       </div>
       <div className='flex items-center bg-yellow-300 p-2 rounded-lg justify-between mb-2'>
         <div className='flex items-center gap-2'>

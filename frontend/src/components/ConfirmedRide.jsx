@@ -5,7 +5,7 @@ const ConfirmedRide = (props) => {
     <div className='w-2/3'>
       <div className='flex justify-between'>
           <h3 className=' text-2xl font-bold mb-4'>Confirm Your Ride</h3>
-          <i onClick={() => {props.setConfirmRidePanel(false)}}  className="text-2xl font-bold ri-arrow-down-wide-fill"></i>
+          <i onClick={() => {props.setConfirmRidePanel(false)}}  className="text-2xl cursor-pointer font-bold ri-arrow-down-wide-fill"></i>
         </div>
 
         <div className='flex gap-2 flex-col justify-between items-center'>

@@ -4,7 +4,7 @@ const WaitingForDrivers = (props) => {
   return (
     <div>
         <div className='flex items-center justify-center -mt-9'>
-            <i onClick={() => {props.setWaitingForDriver(false)}}  className=" text-2xl font-bold ri-arrow-down-wide-fill"></i>
+            <i onClick={() => {props.setWaitingForDriver(false)}}  className=" text-2xl cursor-pointer font-bold ri-arrow-down-wide-fill"></i>
         </div>
         <h1 className='text-xl font-semibold text-center mb-8'>Ride accepted, Waiting for Captain</h1>
         

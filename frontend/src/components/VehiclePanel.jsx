@@ -5,7 +5,7 @@ const VehiclePanel = (props) => {
     <div className='md:w-1/2'>
         <div className='flex justify-between'>
           <h3 className=' text-2xl font-bold mb-4'>Choose a Vehicle</h3>
-          <i onClick={() => {props.setVehiclePanelOpen(false)}}  className="text-2xl font-bold ri-arrow-down-wide-fill"></i>
+          <i onClick={() => {props.setVehiclePanelOpen(false)}}  className="text-2xl cursor-pointer font-bold ri-arrow-down-wide-fill"></i>
         </div>
           
         <div
