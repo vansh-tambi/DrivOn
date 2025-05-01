@@ -223,7 +223,7 @@ socket.on('ride-started', ride => {
       <div className='h-screen justify-end flex flex-col absolute top-0 w-full '>
         <div className='h-[30%] md:px-60 bg-white p-4 relative'>
           <h5 ref={panelCloseRef} className='absolute opacity-0 top-6 right-6 p-2 font-bold text-2xl'>
-            <i onClick={() => setPanelOpen(false)}  className=" ri-arrow-down-wide-fill"></i>
+            <i onClick={() => setPanelOpen(false)}  className=" ri-arrow-down-wide-fill cursor-pointer"></i>
           </h5>
 
           <h4 className='text-2xl font-semibold mt-2 mb-3'>Find a trip</h4>
