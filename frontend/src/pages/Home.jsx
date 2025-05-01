@@ -304,7 +304,7 @@ socket.on('ride-started', ride => {
           setVehicleFound={setVehicleFound} />
       </div>
 
-      <div ref={lookingForDriverRef} className="fixed bottom-0 w-full mb-4 bg-white px-3 pt-6 z-10 translate-y-full">
+      <div ref={lookingForDriverRef} className="fixed bottom-0 w-full flex items-center justify-center md:px-40 mb-4 px-3 bg-white pt-6 z-10 translate-y-full">
           <LookingForDrivers fare={fare} pickup={pickup} destination={destination} vehicleType={vehicleType} setVehicleFound={setVehicleFound} />
       </div>
 

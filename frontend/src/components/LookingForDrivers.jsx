@@ -2,7 +2,7 @@ import React from 'react'
 
 const LookingForDrivers = (props) => {
   return (
-    <div className=''>
+    <div className='md:w-2/3'>
       <div className='flex justify-between'>
           <h3 className=' text-2xl font-bold mb-4'>Looking for Driver</h3>
           <i onClick={() => {props.setVehicleFound(false)}}  className="text-2xl font-bold ri-arrow-down-wide-fill"></i>
