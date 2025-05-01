@@ -186,10 +186,13 @@ const CaptainSignup = () => {
               <option value="moto">Moto</option>
             </select>
           </div>
+              <div className=' flex items-center justify-center'>
+                  <button
+                className='bg-black mb-3 mt-2 md:w-1/3 text-white cursor-pointer rounded-md px-2 py-2 w-full text-lg'
+              >Create Captain Account</button>
+              </div>
 
-          <button
-            className='bg-black mb-3 mt-2 text-white cursor-pointer rounded-md px-2 py-2 w-full text-lg'
-          >Create Captain Account</button>
+
 
         </form>
         <p className='text-center text-gray-700 text-sm'>Already have a account? <Link to='/captain-login' className='text-blue-600 cursor-pointer'>Login here</Link></p>
