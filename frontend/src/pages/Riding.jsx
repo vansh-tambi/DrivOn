@@ -24,7 +24,7 @@ const Riding = () => {
     <div className='h-screen relative overflow-hidden'>
 
         <img src='/DrivOnOrange.png' className='absolute h-10 top-2 left-2'/>
-        <Link to='/home' className='h-10 w-10 absolute bg-black flex items-center justify-center rounded-full right-2 top-2'>
+        <Link to='/home' className='h-10 w-10 absolute bg-black flex items-center cursor-pointer justify-center rounded-full right-2 top-2'>
             <i className="text-xl text-white font-medium ri-logout-box-r-line"></i>
         </Link>
 

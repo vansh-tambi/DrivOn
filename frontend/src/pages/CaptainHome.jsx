@@ -116,7 +116,7 @@ async function confirmRide(){
     <div className='h-screen'>
         <div className='h-3/5 '>
             <LiveTracking vehicleMode={false}/>
-            <Link to='/captain-login' className='h-10 w-10 bg-white flex items-center justify-center rounded-full absolute right-5 top-5'><i className="ri-logout-box-r-line text-2xl"></i></Link>
+            <Link to='/captain-login' className='h-10 w-10 bg-white flex items-center cursor-pointer justify-center rounded-full absolute right-5 top-5'><i className="ri-logout-box-r-line text-2xl"></i></Link>
         </div>
 
         <div><CaptainDetails/></div>

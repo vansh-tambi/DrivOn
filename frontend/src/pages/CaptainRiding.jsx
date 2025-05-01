@@ -34,7 +34,7 @@ const CaptainRiding = () => {
     <div className='h-screen'>  
         <div className='h-4/5 '>
             <LiveTracking />
-            <Link to='/captain-login' className='h-10 w-10 bg-white flex items-center justify-center rounded-full absolute right-5 top-5'><i className="ri-logout-box-r-line text-2xl"></i></Link>
+            <Link to='/captain-login' className='h-10 w-10 bg-white cursor-pointer flex items-center justify-center rounded-full absolute right-5 top-5'><i className="ri-logout-box-r-line text-2xl"></i></Link>
         </div>
 
         <div onClick={()=>setfinishRidePanel(true)} className='h-1/5 py-2 px-5 flex flex-col gap-y-3 bg-yellow-300'>
@@ -46,7 +46,7 @@ const CaptainRiding = () => {
             </div>
         </div>
         
-        <div ref={finishRidePanelRef} className='mb-3 fixed w-full translate-y-full bg-white -bottom-3 px-3 pt-5 py-3 z-10'>
+        <div ref={finishRidePanelRef} className='mb-3 flex items-center justify-center fixed w-full translate-y-full bg-white -bottom-3 px-3 pt-5 py-3 z-10'>
             <FinishRide ride = {rideData} setfinishRidePanel={setfinishRidePanel} />
         </div>
 

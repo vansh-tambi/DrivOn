@@ -52,7 +52,7 @@ const UserLogin = () => {
       </div>
 
       <div className='w-full flex items-center justify-center'>
-        <Link to="/captain-login" className='flex justify-center bg-[#FF6A00] mb-7 font-bold text-white rounded-md px-2 py-2 md:w-1/5 w-full text-lg'>Sign in as Captain</Link>
+        <Link to="/captain-login" className='flex justify-center bg-[#FF6A00] cursor-pointer mb-7 font-bold text-white rounded-md px-2 py-2 md:w-1/5 w-full text-lg'>Sign in as Captain</Link>
       </div>
 
     </div>
