@@ -27,7 +27,7 @@ const VehiclePanel = (props) => {
         onClick={()=>{props.setConfirmRidePanel(true)
           props.setVehicleType('moto')
         }}
-        className='flex active:bg-gray-200 mb-4 w-full border-2 border-black rounded-2xl items-center justify-between p-3'>
+        className='flex cursor-pointer active:bg-gray-200 mb-4 w-full border-2 border-black rounded-2xl items-center justify-between p-3'>
             <img className='h-12 ' src='/DrivOnBike.webp'/>
             <div className=' w-1/2'>
               <h4 className='text-lg font-bold'><span className='text-[#FF6A00]'>D</span>riv<span className='text-[#FF6A00]'>O</span>n-Moto<span className='ml-2 font-semibold'><i className="ri-user-fill font-light"></i>- 1</span></h4>
@@ -42,7 +42,7 @@ const VehiclePanel = (props) => {
         onClick={()=>{props.setConfirmRidePanel(true)
           props.setVehicleType('auto')
         }}
-        className='flex w-full active:bg-gray-200 border-2 mb-4 border-black rounded-2xl items-center justify-between p-3'>
+        className='flex w-full cursor-pointer active:bg-gray-200 border-2 mb-4 border-black rounded-2xl items-center justify-between p-3'>
             <img className='h-12 ' src='/DrivOnAuto.webp'/>
             <div className=' w-1/2'>
               <h4 className='text-lg font-bold'><span className='text-[#FF6A00]'>D</span>riv<span className='text-[#FF6A00]'>O</span>n-Auto<span className='ml-2 font-semibold'><i className="ri-user-fill font-light"></i>- 3</span></h4>
