@@ -289,7 +289,7 @@ socket.on('ride-started', ride => {
         </div>
       </div>
 
-      <div ref={vehiclePanelRef} className='fixed w-full bg-white bottom-0 px-3 pt-6 py-5 z-10 translate-y-full'>
+      <div ref={vehiclePanelRef} className='fixed w-full bg-white md:flex md:items-center md:justify-center bottom-0 px-3 pt-6 py-5 z-10 translate-y-full'>
           <VehiclePanel fare={fare} setVehicleType={setVehicleType} setConfirmRidePanel={setConfirmRidePanel} setVehiclePanelOpen={setVehiclePanelOpen}/>
       </div>
 
