@@ -2,7 +2,7 @@ import React from 'react'
 
 const RidePopups = (props) => {
   return (
-    <div>
+    <div className='md:w-2/3'>
     <div className='flex justify-between'>
         <h3 className=' text-2xl font-bold mb-4'>New Ride Available</h3>
         <i onClick={()=>props.setRidePopupPanel(false)} className="text-2xl font-bold cursor-pointer ri-arrow-down-wide-fill"></i>

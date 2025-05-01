@@ -121,7 +121,7 @@ async function confirmRide(){
 
         <div><CaptainDetails/></div>
         
-        <div ref={ridePopupPanelRef} className='mb-2 fixed w-full translate-y-full bg-white -bottom-3 pb-4 pt-4 px-3 z-10'>
+        <div ref={ridePopupPanelRef} className='mb-2 flex items-center justify-center fixed w-full translate-y-full bg-white -bottom-3 pb-4 pt-4 px-3 z-10'>
             <RidePopups
             ride={ride}
             confirmRide={confirmRide}
@@ -129,7 +129,7 @@ async function confirmRide(){
             setRidePopupPanel={setRidePopupPanel} />
         </div>
 
-        <div ref={ConfirmridePopupPanelRef} className='mb-3 fixed w-full translate-y-full bg-white bottom-0 px-3 pt-5 py-3 z-10'>
+        <div ref={ConfirmridePopupPanelRef} className='mb-3 flex items-center justify-center fixed w-full translate-y-full bg-white bottom-0 px-3 pt-5 py-3 z-10'>
             <ConfirmRidePopup
             ride={ride}
             setConfirmRidePopupPanel={setConfirmRidePopupPanel}

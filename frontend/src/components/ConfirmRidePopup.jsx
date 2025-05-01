@@ -30,7 +30,7 @@ const ConfirmRidePopup = (props) => {
   }
 
   return (
-    <div>
+    <div className='md:w-2/3'>
     <div className='flex justify-between'>
         <h3 className=' text-2xl font-bold mb-4'>Confirm the Ride to start</h3>
         <i onClick={()=>{props.setConfirmRidePopupPanel(false), props.setRidePopupPanel(false)}} className="text-2xl font-bold ri-arrow-down-wide-fill"></i>

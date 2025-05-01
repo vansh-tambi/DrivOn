@@ -32,55 +32,67 @@ const Riding = () => {
             <LiveTracking ride={ride}/>
         </div>
 
-        <div className='h-4/7 mt-4 p-4'>
-            
-            <div className='flex justify-between mb-3'>
-            
+        <div className='flex items-center justify-center md:mt-5'>
+
+
+                <div className='h-4/7 mt-4 p-4 md:w-2/3'>
+                    
+                    <div className='flex justify-between mb-3'>
+                    
+                        
+                    <img className='h-20' src={
+                    ride.captain.vehicle.vehicleType === 'car' ? 'DrivOnCar.png' :
+                    ride.captain.vehicle.vehicleType === 'moto' ? 'DrivOnBike.webp' :
+                    'DrivOnAuto.webp'
+                    } />
+                    
+
+                    <div className='flex flex-col'>
+                        
+                        <h2 className='text-lg font-medium'>{ride?.captain.fullname.firstname}</h2>
+                            <h4 className='text-xl font-semibold -mt-1 -mb-1'>{ride?.captain.vehicle.plate}</h4>
+                            <p className='text-gray-700 text-sm mt-1'>Hero Maestro</p>
+                    </div>    
                 
-            <img className='h-20' src={
-              ride.captain.vehicle.vehicleType === 'car' ? 'DrivOnCar.png' :
-              ride.captain.vehicle.vehicleType === 'moto' ? 'DrivOnBike.webp' :
-              'DrivOnAuto.webp'
-            } />
-            
 
-            <div className='flex flex-col'>
                 
-                <h2 className='text-lg font-medium'>{ride?.captain.fullname.firstname}</h2>
-                    <h4 className='text-xl font-semibold -mt-1 -mb-1'>{ride?.captain.vehicle.plate}</h4>
-                    <p className='text-gray-700 text-sm mt-1'>Hero Maestro</p>
-            </div>    
-        
+                    </div>
 
-        
-            </div>
-
-    <div className='flex gap-2 flex-col justify-between items-center'>
-        <div className='w-full'>
-            <h2 className='text-2xl font-semibold mb-2'>Trip Details:</h2>
-        <div className='flex items-center gap-5 border-b-2 border-b-gray-300 p-2'>
-            <i className='ri-map-pin-add-fill text-2xl'></i>
-            <div>
-                <h3 className='text-lg font-medium'>562/11-A</h3>
-                <p className='text-sm text-gray-600'>{ride?.destination}</p>
-            </div>
-        </div>
-
-
-        <div className='flex items-center gap-5 p-2'>
-        <i className="text-2xl ri-money-rupee-circle-fill"></i>
-                <div>
-                <h3 className='text-lg font-medium'>₹{ride?.fare}</h3>
-                <p className='text-sm text-gray-600'>Cash</p>
+            <div className='flex gap-2 flex-col justify-between items-center'>
+                <div className='w-full'>
+                    <h2 className='text-2xl font-semibold mb-2'>Trip Details:</h2>
+                <div className='flex items-center gap-5 border-b-2 border-b-gray-300 p-2'>
+                    <i className='ri-map-pin-add-fill text-2xl'></i>
+                    <div>
+                        <h3 className='text-lg font-medium'>562/11-A</h3>
+                        <p className='text-sm text-gray-600'>{ride?.destination}</p>
+                    </div>
                 </div>
-        </div>
 
 
+                <div className='flex items-center gap-5 p-2'>
+                <i className="text-2xl ri-money-rupee-circle-fill"></i>
+                        <div>
+                        <h3 className='text-lg font-medium'>₹{ride?.fare}</h3>
+                        <p className='text-sm text-gray-600'>Cash</p>
+                        </div>
+                </div>
+
+
+                </div>
+                
+            </div>
+                    <div className='flex justify-center items-center'>
+                        <button className='w-full mt-1 md:w-1/3 bg-green-500 text-white cursor-pointer font-semibold p-2 rounded-lg'>Pay Now</button>
+                    </div>
+                
+                </div>
+
+
+
         </div>
+
         
-    </div>
-            <button className='w-full mt-1 bg-green-500 text-white cursor-pointer font-semibold p-2 rounded-lg'>Pay Now</button>
-        </div>
 
     </div>
   )

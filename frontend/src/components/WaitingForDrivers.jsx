@@ -2,13 +2,13 @@ import React from 'react'
 
 const WaitingForDrivers = (props) => {
   return (
-    <div>
+    <div className='md:w-2/3'>
         <div className='flex items-center justify-center -mt-9'>
             <i onClick={() => {props.setWaitingForDriver(false)}}  className=" text-2xl cursor-pointer font-bold ri-arrow-down-wide-fill"></i>
         </div>
-        <h1 className='text-xl font-semibold text-center mb-8'>Ride accepted, Waiting for Captain</h1>
+        <h1 className='text-xl font-bold text-center mb-8'>Ride accepted, Waiting for Captain</h1>
         
-      <div className='flex justify-between'>
+      <div className='flex justify-evenly'>
           
             
                 <img className='h-20' src='DrivOnCar.png' />
