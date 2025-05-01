@@ -221,7 +221,7 @@ socket.on('ride-started', ride => {
       </div>
 
       <div className='h-screen justify-end flex flex-col absolute top-0 w-full '>
-        <div className='h-[30%] bg-white p-4 relative'>
+        <div className='h-[30%] md:px-60 bg-white p-4 relative'>
           <h5 ref={panelCloseRef} className='absolute opacity-0 top-6 right-6 p-2 font-bold text-2xl'>
             <i onClick={() => setPanelOpen(false)}  className=" ri-arrow-down-wide-fill"></i>
           </h5>
@@ -270,12 +270,14 @@ socket.on('ride-started', ride => {
 </form>
 
 
+      <div className='flex items-center w-full justify-center'>
+          <button onClick={findTrip} className='bg-black w-full md:w-2/5 mt-9 mb-2 text-white px-4 py-2 rounded-lg'>Find Trip</button>
+      </div>
 
-
-          <button onClick={findTrip} className='bg-black w-full mt-9 mb-2 text-white px-4 py-2 rounded-lg'>Find Trip</button>
+          
         </div>
 
-        <div ref={panelRef} className='h-[0%] w-full bg-white'>
+        <div ref={panelRef} className='h-[0%] p-4 w-full bg-white'>
           <LocationSearchPanel 
           suggestions={activeField === 'pickup' ? pickupSuggestions : destinationSuggestions}
           setPanelOpen={setPanelOpen}
