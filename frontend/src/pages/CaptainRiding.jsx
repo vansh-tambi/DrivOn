@@ -42,7 +42,7 @@ const CaptainRiding = () => {
 
             <div className='flex justify-between items-center'>
                 <h4 className='text-xl font-semibold'>4KM away</h4>
-                <button className='bg-green-500 text-white font-semibold p-3 px-10 rounded-lg'>Complete Ride</button>
+                <button className='bg-green-500 text-white font-semibold cursor-pointer p-3 px-10 rounded-lg'>Complete Ride</button>
             </div>
         </div>
         

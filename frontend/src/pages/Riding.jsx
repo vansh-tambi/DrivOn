@@ -79,7 +79,7 @@ const Riding = () => {
         </div>
         
     </div>
-            <button className='w-full mt-1 bg-green-500 text-white font-semibold p-2 rounded-lg'>Pay Now</button>
+            <button className='w-full mt-1 bg-green-500 text-white cursor-pointer font-semibold p-2 rounded-lg'>Pay Now</button>
         </div>
 
     </div>

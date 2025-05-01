@@ -46,7 +46,7 @@ const UserLogin = () => {
         <input className='bg-[#eeeeee] mb-7 rounded-md px-2 py-2 border w-full text-lg placeholder:text-lg' 
           value={password} onChange={(p)=>{setPassword(p.target.value)}} required type='password' placeholder='Password'/>
     
-        <button className='bg-black mb-3 text-white rounded-md px-2 py-2 w-full text-lg'>Login</button>
+        <button className='bg-black mb-3 cursor-pointer text-white rounded-md px-2 py-2 w-full text-lg'>Login</button>
       </form>
         <p className='text-center mb-7 text-gray-700'>New here? <Link to="/signup" className='text-[#3A86FF]'>Create new Account</Link></p>
       </div>

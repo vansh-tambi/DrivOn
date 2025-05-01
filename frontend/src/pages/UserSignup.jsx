@@ -87,7 +87,7 @@ const UserSignup = () => {
         <input className='bg-[#eeeeee] mb-6 rounded-md px-2 py-2 border w-full text-lg placeholder:text-base' 
            required type='password' value={password} onChange={(e)=>{setPassword(e.target.value)}} placeholder='Password'/>
     
-        <button onClick={(e)=>{submitHandler(e)}} className='bg-[#111] mb-3 text-white rounded-md px-2 py-2 w-full text-lg'>Create Account</button>
+        <button onClick={(e)=>{submitHandler(e)}} className='bg-[#111] mb-3 text-white cursor-pointer rounded-md px-2 py-2 w-full text-lg'>Create Account</button>
       </form>
         <p className='text-center mb-6 text-black'>Already have a account? <Link to="/login" className='text-[#3A86FF]'>Login in here</Link></p>
       </div>

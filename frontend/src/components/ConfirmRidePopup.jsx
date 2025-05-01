@@ -80,12 +80,12 @@ const ConfirmRidePopup = (props) => {
           <form onSubmit={submitHander}>
 
             <input type='text' value={otp} onChange={(e)=>setOtp(e.target.value)} placeholder='Enter OTP' className='bg-[#eee] font-mono px-12 py-2 text-lg rounded-lg w-full mt-3' />
-            <button className='w-full flex justify-center mt-8 mb-3 bg-green-500 text-white font-semibold p-2 rounded-lg'>Confirm</button>
+            <button className='w-full flex justify-center mt-8 cursor-pointer mb-3 bg-green-500 text-white font-semibold p-2 rounded-lg'>Confirm</button>
             <button
             onClick={()=>{
               props.setConfirmRidePopupPanel(false)
               props.setRidePopupPanel(false)}}
-              className='w-full mt-1 bg-gray-500 text-white font-semibold p-2 rounded-lg'>Cancel</button>
+              className='w-full mt-1 bg-gray-500 text-white cursor-pointer font-semibold p-2 rounded-lg'>Cancel</button>
           </form>
           
         </div>

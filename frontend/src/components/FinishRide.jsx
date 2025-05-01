@@ -76,7 +76,7 @@ const FinishRide = (props) => {
 
                 <button
                 onClick={endRide}
-                className='w-full flex justify-center mt-8 mb-3 bg-green-500 text-white font-semibold p-2 rounded-lg'>Finish Ride</button>
+                className='w-full flex justify-center mt-8 mb-3 bg-green-500 cursor-pointer text-white font-semibold p-2 rounded-lg'>Finish Ride</button>
               <p className='text-gray-700 mt-6 text-sm'>Click on finish ride button if you have completed the payment</p>
             </div>
             

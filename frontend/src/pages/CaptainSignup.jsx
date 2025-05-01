@@ -188,7 +188,7 @@ const CaptainSignup = () => {
           </div>
 
           <button
-            className='bg-black mb-3 mt-2 text-white rounded-md px-2 py-2 w-full text-lg'
+            className='bg-black mb-3 mt-2 text-white cursor-pointer rounded-md px-2 py-2 w-full text-lg'
           >Create Captain Account</button>
 
         </form>

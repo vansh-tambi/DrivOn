@@ -271,7 +271,7 @@ socket.on('ride-started', ride => {
 
 
       <div className='flex items-center w-full justify-center'>
-          <button onClick={findTrip} className='bg-black w-full md:w-2/5 md:mt-4 mt-9 mb-2 text-white px-4 py-2 rounded-lg'>Find Trip</button>
+          <button onClick={findTrip} className='bg-black w-full md:w-2/5 md:mt-4 mt-9 mb-2 cursor-pointer text-white px-4 py-2 rounded-lg'>Find Trip</button>
       </div>
 
           
