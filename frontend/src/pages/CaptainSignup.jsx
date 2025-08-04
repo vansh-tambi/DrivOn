@@ -42,11 +42,11 @@ const CaptainSignup = () => {
   const submitHandler = async (e) => {
     e.preventDefault()
 
-    const isValidEmail = await verifyEmail(email);
-    if (!isValidEmail) {
-      alert("❌ Email address doesn't exist or is not valid. Please use a real one.");
-      return;
-    }
+    // const isValidEmail = await verifyEmail(email);
+    // if (!isValidEmail) {
+    //   alert("❌ Email address doesn't exist or is not valid. Please use a real one.");
+    //   return;
+    // }
     const captainData = {
       fullname: {
         firstName: firstName,
