@@ -24,7 +24,7 @@ const CaptainSignup = () => {
 
 
   const verifyEmail = async (email) => {
-    const apiKey = 'eda82a106d044c8b88e883cedbdcebad'; // replace with your real key
+    const apiKey = '7c1c70e2185c53db58ba3cf98791d834e7553d1e'; // replace with your real key
     const url = `https://api.zerobounce.net/v2/validate?api_key=${apiKey}&email=${email}`;
   
     try {
